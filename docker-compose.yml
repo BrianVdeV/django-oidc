@@ -3,11 +3,17 @@ services:
     restart: always
     build: .
     ports:
-      - "8000:8000" 
+      - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy   # Espera que MariaDB esté listo
+    environment:
+      - DB_HOST=db
     volumes:
       - .:/app
+    networks:
+      - app_network
+
   db:
     image: mariadb:11
     restart: always
@@ -20,6 +26,18 @@ services:
       - db_data:/var/lib/mysql
     ports:
       - "3308:3306"
+    networks:
+      - app_network
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  app_network:
+    driver: bridge
 
 volumes:
   db_data:
