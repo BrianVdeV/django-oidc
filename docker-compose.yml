@@ -1,0 +1,25 @@
+services:
+  django:
+    restart: always
+    build: .
+    ports:
+      - "8000:8000" 
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+  db:
+    image: mariadb:11
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=eunacino
+      - MYSQL_DATABASE=oidc
+      - MYSQL_USER=mariadb
+      - MYSQL_PASSWORD=mariadb
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3308:3308"
+
+volumes:
+  db_data:
