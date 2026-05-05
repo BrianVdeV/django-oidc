@@ -1,3 +1,5 @@
 Django
 django-oidc-provider
 mysqlclient
+gunicorn
+whitenoise
