@@ -128,4 +128,4 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-OIDC_USERINFO = 'auth.apps.AuthConfig.oidc.userinfo'
+OIDC_USERINFO = 'auth.oidc.userinfo'
