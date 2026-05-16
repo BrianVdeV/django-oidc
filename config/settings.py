@@ -129,3 +129,4 @@ STATICFILES_DIRS = [
 ]
 
 OIDC_USERINFO = 'auth.oidc.userinfo'
+LOGIN_URL = 'login'

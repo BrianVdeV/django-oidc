@@ -3,7 +3,7 @@ services:
     restart: always
     build: .
     ports:
-      - "8000:8000"
+      - "8001:8001"
     depends_on:
       db:
         condition: service_healthy   # Espera que MariaDB esté listo
