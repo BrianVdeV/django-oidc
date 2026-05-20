@@ -130,3 +130,7 @@ STATICFILES_DIRS = [
 
 OIDC_USERINFO = 'auth.oidc.userinfo'
 LOGIN_URL = 'login'
+CSRF_TRUSTED_ORIGINS = [
+    'https://login.planosperu.com.pe',
+    'https://planosperu.com.pe',
+]
