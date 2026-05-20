@@ -3,4 +3,5 @@ def userinfo(claims, user):
     ) or user.username
     claims['email'] = user.email
     claims['preferred_username'] = user.username
+    claims['email_verified'] = True
     return claims

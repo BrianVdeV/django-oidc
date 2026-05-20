@@ -5,6 +5,8 @@
 ```bash
 image: outlinewiki/outline:latest
 environment:
+  OIDC_CLIENT_ID: ${CLIENT_ID}
+  OIDC_AUTH_URI: ${DEX_URL}/authorize
   FILE_STORAGE=local
   FILE_STORAGE_LOCAL_ROOT_DIR=/var/lib/outline/data
   FILE_STORAGE_UPLOAD_MAX_SIZE=26214400
