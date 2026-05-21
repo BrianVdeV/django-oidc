@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views import View
 
@@ -24,3 +24,11 @@ class LoginView(View):
         else:
             messages.error(request, "Usuario o contraseña incorrectos.")
             return render(request, self.template_name)
+
+
+class LogoutView(View):
+    """Vista de cierre de sesión."""
+
+    def get(self, request):
+        logout(request)
+        return redirect('login')
