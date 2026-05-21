@@ -134,4 +134,3 @@ CSRF_TRUSTED_ORIGINS = [
     'https://login.planosperu.com.pe',
     'https://planosperu.com.pe',
 ]
-OIDC_SKIP_CONSENT_ALWAYS = True
