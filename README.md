@@ -6,6 +6,7 @@ Login en Django usando OIDC para conectar con la app Outline
 ```bash
 image: outlinewiki/outline:latest
 environment:
+  DEFAULT_LANGUAGE: "es_ES"
   OIDC_CLIENT_ID: ${CLIENT_ID}
   OIDC_AUTH_URI: ${DEX_URL}/authorize
   OIDC_LOGOUT_URI: ${DEX_URL}/logout
