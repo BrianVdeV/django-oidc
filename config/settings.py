@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auth.apps.AuthConfig',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,18 @@ CSRF_TRUSTED_ORIGINS = [
     'https://login.planosperu.com.pe',
     'https://planosperu.com.pe',
 ]
+
+
+OIDC_PRIVATE_KEY_PATH = BASE_DIR / "secrets" / "oidc.key"
+OIDC_RSA_PRIVATE_KEY = OIDC_PRIVATE_KEY_PATH.read_text()
+
+OAUTH2_PROVIDER = {
+    'OIDC_ENABLED': True,
+    'OIDC_RSA_PRIVATE_KEY': OIDC_RSA_PRIVATE_KEY,
+    "PKCE_REQUIRED": False,
+    'SCOPES': {
+        'openid': 'OpenID Connect',
+        'profile': 'User profile',
+        'email': 'User email',
+    },
+}

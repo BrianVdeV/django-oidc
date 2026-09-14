@@ -11,6 +11,7 @@ services:
       - DB_HOST=db
     volumes:
       - .:/app
+      - oidc_keys:/app/secrets
     networks:
       - app_network
 
@@ -41,3 +42,4 @@ networks:
 
 volumes:
   db_data:
+  oidc_keys:
