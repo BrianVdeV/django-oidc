@@ -10,8 +10,8 @@ services:
     environment:
       - DB_HOST=db
     volumes:
-      - .:/app
       - oidc_keys:/app/secrets
+      - static_data:/app/staticfiles
     networks:
       - app_network
 
@@ -43,3 +43,4 @@ networks:
 volumes:
   db_data:
   oidc_keys:
+  static_data:
