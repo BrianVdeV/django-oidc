@@ -147,4 +147,5 @@ OAUTH2_PROVIDER = {
         'profile': 'User profile',
         'email': 'User email',
     },
+    "OAUTH2_VALIDATOR_CLASS": "auth.oidc.CustomOAuth2Validator",
 }
