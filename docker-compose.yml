@@ -16,7 +16,7 @@ services:
       - app_network
 
   db:
-    image: mariadb:11
+    image: mariadb:11.4
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=eunacino
