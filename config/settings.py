@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'oidc_provider',
     'auth.apps.AuthConfig',
 ]
 
@@ -128,7 +127,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-OIDC_USERINFO = 'auth.oidc.userinfo'
 LOGIN_URL = 'login'
 CSRF_TRUSTED_ORIGINS = [
     'https://login.planosperu.com.pe',
