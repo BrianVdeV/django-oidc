@@ -18,6 +18,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiamos el resto del código
 COPY . .
 
-# Comando de inicio
-# NOTA: Cambia 'config.wsgi' por el nombre de la carpeta donde esté tu wsgi.py
-CMD ["./entrypoint.sh"]
+# Reemplázala por:
+CMD ["sh", "./entrypoint.sh"]
